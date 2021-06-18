@@ -32,7 +32,7 @@ namespace Car.Test
             context.SaveChanges();
         }
 
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
             SeedDb();
