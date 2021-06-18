@@ -5,10 +5,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY "API.sln" "API.sln"
-COPY "Car.API" "Car.API/"
+COPY . ./Car.API/.
 RUN dotnet restore "Car.API/Car.API.csproj"
-COPY . .
 WORKDIR "/src/Car.API"
 RUN dotnet build "Car.API.csproj" -c Release -o /app/build
 
