@@ -1,0 +1,15 @@
+<mat-card *ngIf="$obsCar | async as car else loading">
+    <mat-card-header>
+        <mat-card-title>{{car?.model}}</mat-card-title>
+        <mat-card-subtitle *ngIf="$obsBrand | async as brand">{{brand?.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <h3>{{car?.price | currency:'€'}}</h3>
+        <p>Mise en circulation le {{car?.dateOfCirculation | date:'dd MMM yyyy'}}</p>
+    </mat-card-content>
+
+</mat-card>
+
+<ng-template #loading>
+    <mat-spinner></mat-spinner>
+</ng-template>

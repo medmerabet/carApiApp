@@ -1,0 +1,15 @@
+<footer>
+    <mat-icon>copyright</mat-icon> Formation Angular
+    <h3>TOP 3 des marques</h3>
+
+    <mat-grid-list cols="3" rowHeight="300px">
+        <mat-grid-tile *ngFor="let brand of brands">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{brand.name}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="assets/images/{{brand.image}}" />
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</footer>
